@@ -12,6 +12,38 @@
  */
 
 
+
+/*Botones contacto*/
+#botones .btn-whatsapp{
+  background-color: #25d366;
+  margin-left: 100px;
+}
+
+#botones .btn-telegram{
+  background-color: #007bff;
+  margin-left: 100px;
+}
+
+#botones .btn-email{
+  background-color: #ffecb5;
+  margin-left: 100px;
+}
+
+#botones .btn-sms{
+  background-color: #ffc720;
+  margin-left: 100px;
+}
+
+#botones .btn-messenger{
+  background-color: #0dcaf0;
+  margin-left: 100px;
+}
+
+#botones .btn-llamada{
+  background-color: #4d5154;
+  margin-left: 100px;
+}
+
  /*services*/
  /* Services Section
 --------------------------------*/
