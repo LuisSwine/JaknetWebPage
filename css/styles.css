@@ -44,6 +44,9 @@
   margin-left: 100px;
 }
 
+.btn-container a.btn{
+  width: 60%;
+}
  /*services*/
  /* Services Section
 --------------------------------*/

@@ -43,29 +43,34 @@
                     <!-- Contact form-->
                     <div class="bg-light rounded-4 py-5 px-4 px-md-5">
                         <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder">Contáctanos</h1>
+                            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Contáctanos</span></h1>
                             <p class="lead fw-normal text-muted mb-0">En JakNet decides como comunicarte</p>
                         </div>
                         <div class="row gx-6 justify-content-center" id="botones">
-                            <div class="col-md-6 col-lg-6 mb-3 " data-aos="zoom-in" data-aos-delay="100">
-                                <button class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                            <div class="col-md-6 col-lg-6 mb-3 btn-container" data-aos="zoom-in" data-aos-delay="100">
+                                <a class="btn btn-outline-dark btn-lg btn-lg px-5 py-3 fs-6 fw-bolder btn-whatsapp" href=""><i class="fab fa-whatsapp"></i> WhatsApp</a>
                             </div>
-                            <div class="col-md-6 col-lg-6 mb-3 " data-aos="zoom-in" data-aos-delay="100">
-                                <button class="btn-telegram"><i class="fab fa-telegram-plane"></i> Telegram</button>
+                            <div class="col-md-6 col-lg-6 mb-3 btn-container" data-aos="zoom-in" data-aos-delay="100">
+                                <a class="btn btn-outline-dark btn-lg btn-lg px-5 py-3 fs-6 fw-bolder btn-telegram" href=""><i class="fab fa-telegram-plane"></i> Telegram</a>
                             </div>
-                            <div class="col-md-6 col-lg-6 mb-3 " data-aos="zoom-in" data-aos-delay="100">
-                                <button class="btn-email"><i class="far fa-envelope"></i> E-mail</button>
+                            <div class="col-md-6 col-lg-6 mb-3 btn-container" data-aos="zoom-in" data-aos-delay="100">
+                                <a class="btn btn-outline-dark btn-lg btn-lg px-5 py-3 fs-6 fw-bolder btn-sms" href=""><i class="fas fa-sms"></i> SMS</a>
                             </div>
-                            <div class="col-md-6 col-lg-6 mb-3 " data-aos="zoom-in" data-aos-delay="100">
-                                <button class="btn-sms"><i class="fas fa-sms"></i> SMS</button>
+                            <div class="col-md-6 col-lg-6 mb-3 btn-container" data-aos="zoom-in" data-aos-delay="100">
+                                <a class="btn btn-outline-dark btn-lg btn-lg px-5 py-3 fs-6 fw-bolder btn-messenger" href=""><i class="fab fa-facebook-messenger"></i> Messenger</a>
                             </div>
-                            <div class="col-md-6 col-lg-6 mb-3 " data-aos="zoom-in" data-aos-delay="100">
-                                <button class="btn-messenger"><i class="fab fa-facebook-messenger"></i> Messenger</button>
+                            <div class="col-md-6 col-lg-6 mb-3 btn-container" data-aos="zoom-in" data-aos-delay="100">
+                                <a class=" btn btn-outline-dark btn-lg btn-lg px-5 py-3 fs-6 fw-bolder btn-llamada" href=""><i class="fas fa-phone"></i> Llamada</a>
                             </div>
-                            <div class="col-md-6 col-lg-6 mb-3 " data-aos="zoom-in" data-aos-delay="100">
-                                <button class="btn-llamada"><i class="fas fa-phone"></i> Llamada</button>
+                            <div class="col-md-6 col-lg-6 mb-3 btn-container" data-aos="zoom-in" data-aos-delay="100">
+                                <a class="btn btn-outline-dark btn-lg btn-lg px-5 py-3 fs-6 fw-bolder btn-email" href=""><i class="fas fa-robot"></i> Chatbot</a>
                             </div>
+
+                            <div class="text-center mb-5 mt-4">
+                                <p class="lead fw-normal text-muted mb-0">O en otro caso envíanos correo electrónico</p>
+                            </div>
+                            
+
 
 
                             <div class="col-lg-8 col-xl-6">
@@ -79,28 +84,28 @@
                                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                        <label for="name">Full name</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                        <input class="form-control" id="name" type="text" placeholder="Ingrese su nombre..." data-sb-validations="required" />
+                                        <label for="name">Nombre completo</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Ingrese su nombre por favor</div>
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                        <label for="email">Email address</label>
-                                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                        <input class="form-control" id="email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
+                                        <label for="email">Correo Electrónico</label>
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">Escriba su correo</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Correo invalido.</div>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                        <label for="phone">Phone number</label>
-                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                        <input class="form-control" id="phone" type="tel" placeholder="(55) 2456-7890" data-sb-validations="required" />
+                                        <label for="phone">Numero Telefónico</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">Escriba su número telefónico.</div>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                        <label for="message">Message</label>
-                                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                        <textarea class="form-control" id="message" type="text" placeholder="Escriba su mensaje..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <label for="message">Mensaje</label>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">Por favor ingrese el mensaje.</div>
                                     </div>
                                     <!-- Submit success message-->
                                     <!---->
@@ -108,7 +113,7 @@
                                     <!-- has successfully submitted-->
                                     <div class="d-none" id="submitSuccessMessage">
                                         <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
+                                            <div class="fw-bolder">Envío correctamente!</div>
                                             To activate this form, sign up at
                                             <br />
                                             <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
@@ -118,9 +123,9 @@
                                     <!---->
                                     <!-- This is what your users will see when there is-->
                                     <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error de envío de mensaje!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>
                                 </form>
                             </div>
                         </div>
