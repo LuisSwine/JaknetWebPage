@@ -44,6 +44,11 @@
   margin-left: 100px;
 }
 
+.logonav{
+  width: 130px;
+  height: 60px;
+}
+
 .btn-container a.btn{
   width: 60%;
 }
@@ -2825,6 +2830,8 @@ textarea.form-control-lg {
   background-color: rgba(220, 53, 69, 0.9);
   border-radius: 0.375rem;
 }
+
+
 
 .was-validated :invalid ~ .invalid-feedback,
 .was-validated :invalid ~ .invalid-tooltip,
