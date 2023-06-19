@@ -737,6 +737,10 @@ progress {
   height: 400px;
 }
 
+.img-fluid2 {
+  max-width: 100%;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
