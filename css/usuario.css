@@ -1,0 +1,9 @@
+.scaffold-layout__main{
+    grid-area: main;
+}
+
+
+
+.scaffold-layout--reflow .artdeco-card{
+    border-radius: 2rem;
+}
