@@ -1,0 +1,23 @@
+{
+  "name": "jaknetwebpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisSwine/JaknetWebPage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisSwine/JaknetWebPage/issues"
+  },
+  "homepage": "https://github.com/LuisSwine/JaknetWebPage#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^9.23.0"
+  }
+}
