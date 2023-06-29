@@ -9,7 +9,7 @@ const app = express()
 
 //motor de plantillas
 app.set('view engine','ejs')
-app.set('views', path.join(__dirname, 'views'));
+app.set('views',__dirname +'/views');
 
 //Carpeta public para los archivos estaticos
 app.use(express.static('public'))

@@ -1,11 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Holi :3</h1>
+<%-include ('./views/partials/head',{titulo:'JakNet'});%>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">
+                  <img src="/assets/img/logo.png" class="logonav" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Nuestros Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registro.html">Zona de Usuario</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-5 pb-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-xxl-5">
+                        <!-- Header text content-->
+                        <div class="text-center text-xxl-start">
+                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Cableado Estructurado &middot; Videovigilancia &middot; Seguridad &middot; Asesoría</div></div>
+                            <div class="fs-3 fw-light text-muted">Soluciones Tecnológias</div>
+                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Enfocados al cliente</span></h1>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Blog</a>
+                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contáctanos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7">
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Servicios-->
+        <section id="services" class="bg-light py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xxl-8">
+                        <div class="text-center my-5">
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Nuestros Servicios</span></h2>
+                            <p class="lead fw-light mb-4">Contamos con un amplia gama de productos y servicios desarrollados por nuestro personal altamente capacitado. </p>
+                            
+                            <div class="row justify-content-center">
+
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
+                                    <h4 class="title"><a href="projects.html">Cableado Estructurado</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-card-checklist" style="color: #e9bf06;"></i></div>
+                                    <h4 class="title"><a href="projects.html">Videovigilancia</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                  </div>
+                                </div>
+                      
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
+                                    <h4 class="title"><a href="projects.html">Seguridad</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
+                                    <h4 class="title"><a href="projects.html">Infraestructura de Red</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                  </div>
+                                </div>
+                      
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-brightness-high" style="color: #d6ff22;"></i></div>
+                                    <h4 class="title"><a href="projects.html">Radio y Comunicación</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint </p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-calendar4-week" style="color: #4680ff;"></i></div>
+                                    <h4 class="title"><a href="projects.html">Energía</a></h4>
+                                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                  </div>
+                                </div>
+                      
+                            </div>
+                            <p class="lead fw-light mb-4">Selecciona alguno y descubre todo lo que tenemos para ti </p>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Socios-->
+        <section id="clients" class="bg-light py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xxl-8">
+                        <div class="text-center my-5">
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Partners</span></h2>
+                            <!--p class="lead fw-light mb-4">Contamos con los mejores socios... </p-->
+                            
+                            <div class="row justify-content-center">
+
+                                <div class="row g-0 clients-wrap clearfix" data-aos="zoom-in" data-aos-delay="100">
+
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-1.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-2.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-3.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-4.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-5.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-6.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-7.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                    <div class="col-lg-3 col-md-4 col-xs-6">
+                                      <div class="client-logo">
+                                        <img src="/assets/img/clients/client-8.png" class="img-fluid2" alt="">
+                                      </div>
+                                    </div>
+                          
+                                  </div>
+                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>            
+
+        <!-- About Section-->
+        <section class="bg-light py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xxl-8">
+                        <div class="text-center my-5">
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
+                            <p class="lead fw-light mb-4">My name is Start Bootstrap and I help brands grow.</p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur autem. Eveniet quasi nobis aliquid cumque officiis sed rem iure ipsa! Praesentium ratione atque dolorem?</p>
+                            <div class="d-flex justify-content-center fs-2 gap-4">
+                                <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a>
+                                <a class="text-gradient" href="#!"><i class="bi bi-linkedin"></i></a>
+                                <a class="text-gradient" href="#!"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
