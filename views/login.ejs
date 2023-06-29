@@ -1,0 +1,49 @@
+<%-include ('./partials/head',{titulo:'Login'}) %>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/img/logo.png" class="logonav" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="/home">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/servicios">Nuestros Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/perfil">Zona de Usuario</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="contenedorP">
+            <div class="form">
+                <h1 class="display-3 fw-bolder mb-5 text-center py-5"><span class="text-gradient d-inline">Login</span></h1>
+                <div class="card py-3 text-center container" style="max-width: 400px; margin: 0 auto;">
+                    <form action="/iniciarSesion" method="post">
+                        <div class="forma">
+                            <b class="error" id="validaRespuesta"></b>
+                            <input class="reg" name="user" type="text" placeholder="Nombre de usuario" id="user">
+                            <div class="oculto py-3">
+                                <input class="reg" name="passwd" type="password" placeholder="Contraseña" id="contra">
+                                <span class="show-btn"><i class="fas fa-eye" id="eye1"></i></span>
+                            </div>
+                            <input class="btn btn-outline-primary btn-lg fs-6 fw-bolder" type="submit" value="Ingresar">
+                        </div>
+                    </form>
+                </div>
+                <div class="text-center px-5 py-3 users">
+                    <a class="OC px-5" href="/olvideMiConstra">Olvidé mi contraseña</a>
+                    <a class="RA px-5" href="/reg">Regístrese aquí</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+</body>
+</html>
