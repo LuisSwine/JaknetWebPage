@@ -1,0 +1,16 @@
+select{
+    display: flex;
+    flex: 0 0 auto;
+    align-items: stretch;
+    margin-left: .5em;
+    margin-right: .5em;
+    width: 92%;
+    height: 100%;
+    font-weight: 500;
+    background-color: A790A5;
+    color: #000000;
+    border: none;
+    padding-left: .8em;
+    padding-right: .8em;
+    cursor: pointer;
+  }

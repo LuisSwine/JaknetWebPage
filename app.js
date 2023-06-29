@@ -7,12 +7,12 @@ const path = require('path');
 //invocamos express
 const app = express()
 
-//motor de plantillas
-app.set('view engine','ejs')
-app.set('views',__dirname +'/views');
-
 //Carpeta public para los archivos estaticos
 app.use(express.static('public'))
+
+//motor de plantillas
+app.set('view engine','ejs')
+app.set('views',path.join(__dirname, 'views'))
 
 //Configuramos procesamiento de datos
 app.use(express.urlencoded({extended:true}))
@@ -28,11 +28,11 @@ app.use(cookieParser())
 app.use('/', require('./routes/router'))
 
 //Eliminar cache
-/*app.use(function(req,res,next){
+app.use(function(req,res,next){
     if(!req.user)
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
     next();
-})*/
+})
 
 //Puerto del servidor
 app.listen(3000, ()=>{
