@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+const { text } = require("express");
+
 const movPag = document.querySelector(".movPag");
 const btn_adelante2 = document.querySelector(".sigPag");
 
@@ -22,6 +26,69 @@ const eye2=document.getElementById("eye2")
 let max = 4; /*maximo de paginas creadas*/
 let cont=1;
 
+//Aparicion de ventanas
+const card2List = document.querySelectorAll(".card2");
+let currentCardIndex = 0;
+
+function showCurrentCard() {
+  card2List[currentCardIndex].style.display = "block";
+}
+
+function hideCurrentCard() {
+  card2List[currentCardIndex].style.display = "none";
+}
+
+function showNextCard() {
+  hideCurrentCard();
+  currentCardIndex++;
+  if (currentCardIndex >= card2List.length) {
+    currentCardIndex = 0;
+  }
+  showCurrentCard();
+}
+
+// Mostrar la primera tarjeta al cargar la página
+showCurrentCard();
+
+// Escuchar el evento del botón "Siguiente" en cada tarjeta
+const nextButtons = document.querySelectorAll(".card2 .sigPag");
+nextButtons.forEach((button) => {
+  button.addEventListener("click", showNextCard);
+});
+
+//PROGRESO
+function updateProgress(currentIndex) {
+    progressText.forEach((text, index) => {
+      if (index === currentIndex) {
+        text.classList.add("active");
+      } else {
+        text.classList.remove("active");
+      }
+    });
+  
+    progressCheck.forEach((check, index) => {
+      if (index === currentIndex) {
+        check.classList.add("active");
+      } else {
+        check.classList.remove("active");
+      }
+    });
+  
+    num.forEach((number, index) => {
+      if (index === currentIndex) {
+        number.classList.add("active");
+      } else {
+        number.classList.remove("active");
+      }
+    });
+  }
+  
+  // Llamar a la función para mostrar el progreso inicial
+  updateProgress(currentCardIndex);
+
+
+//BOTONES
+
 btn_adelante2.addEventListener("click", function(e){
 e.preventDefault();
 
@@ -31,13 +98,89 @@ let curp=ValidaCurp();
 let sex=ValidaSexo();
 
    if(name===true && lastname1===true && curp===true && sex===true){   
-        movPag.style.marginLeft = "-58vh";
+        movPag.style.marginLeft = `calc(-58vh * ${cont})`;
         num[cont - 1].classList.add("active");
         progressText[cont - 1].classList.add("active");
         progressCheck[cont - 1].classList.add("active");
         cont+=1;
    }
 });
+
+btn_atras1.addEventListener("click", function(e){
+    e.preventDefault();
+    movPag.style.marginLeft = `calc(-58vh * ${cont - 2})`;
+    num[cont - 2].classList.remove("active");
+    progressText[cont - 2].classList.remove("active");
+    progressCheck[cont - 2].classList.remove("active");
+    cont-=1;
+});
+
+btn_adelante3.addEventListener("click", function(e){
+    e.preventDefault();
+    let country=ValidarPais();
+    let state=ValidarEstado();
+    let CP=ValidarCP();
+
+    if(country===true && state===true && CP===true){
+    movPag.style.marginLeft = `calc(-58vh * ${cont})`;
+    num[cont - 1].classList.add("active");
+    progressText[cont - 1].classList.add("active");
+    progressCheck[cont - 1].classList.add("active");
+    cont+=1;
+    }
+});
+
+btn_atras2.addEventListener("click", function(e){
+    e.preventDefault();
+    movPag.style.marginLeft = `calc(-58vh * ${cont - 2})`;
+    num[cont - 2].classList.remove("active");
+    progressText[cont - 2].classList.remove("active");
+    progressCheck[cont - 2].classList.remove("active");
+    cont-=1;
+});
+
+btn_adelante4.addEventListener("click", function(e){
+    e.preventDefault();
+    let cellphone=ValidaCelular();
+    let email=ValidaEmail();
+
+    if(cellphone===true && email===true){
+    movPag.style.marginLeft = `calc(-58vh * ${cont})`;
+    num[cont - 1].classList.add("active");
+    progressText[cont - 1].classList.add("active");
+    progressCheck[cont - 1].classList.add("active");
+    cont+=1;
+    }
+});
+
+btn_atras3.addEventListener("click", function(e){
+    e.preventDefault();
+    movPag.style.marginLeft = `calc(-58vh * ${cont - 2})`;
+    num[cont - 2].classList.remove("active");
+    progressText[cont - 2].classList.remove("active");
+    progressCheck[cont - 2].classList.remove("active");
+    cont-=1;
+});
+
+btn_fin.addEventListener("click", function(e){
+    e.preventDefault();
+    let user=ValidarUsuario();
+    let psswd=validarPsswd();
+    let psswdR=validarPsswdR();
+    let valid=ValidaContras();
+    let SQ=ValidarPseg(); 
+    let ans=ValidarRespuestaS();
+
+    if(user===true && psswd===true && psswdR===true && valid===true && SQ===true  && ans===true){
+    alert("Registro finalizado con exito")
+    num[cont - 1].classList.add("active");
+    progressText[cont - 1].classList.add("active");
+    progressCheck[cont - 1].classList.add("active");
+    window.location.href="/login"
+    }
+});
+
+//validaciones
 
 function ValidaNombre(){
     var nombre=document.getElementById("nombre").value;  
@@ -135,20 +278,7 @@ function ValidaSexo(){
     }
 }
 
-btn_adelante3.addEventListener("click", function(e){
-    e.preventDefault();
-    let country=ValidarPais();
-    let state=ValidarEstado();
-    let CP=ValidarCP();
 
-    if(country===true && state===true && CP===true){
-    movPag.style.marginLeft = "-120vh";
-    num[cont - 1].classList.add("active");
-    progressText[cont - 1].classList.add("active");
-    progressCheck[cont - 1].classList.add("active");
-    cont+=1;
-    }
-});
 
 function ValidarPais(){
     var pais=document.getElementById("pais").value;  
@@ -219,19 +349,6 @@ function ValidarCP(){
     }   
 }
 
-btn_adelante4.addEventListener("click", function(e){
-    e.preventDefault();
-    let cellphone=ValidaCelular();
-    let email=ValidaEmail();
-
-    if(cellphone===true && email===true){
-    movPag.style.marginLeft = "-182vh";
-    num[cont - 1].classList.add("active");
-    progressText[cont - 1].classList.add("active");
-    progressCheck[cont - 1].classList.add("active");
-    cont+=1;
-    }
-});
 
 function ValidaCelular(){
     var celular=document.getElementById("celular").value;  
@@ -278,24 +395,6 @@ function ValidaEmail(){
         }
     }   
 }
-
-btn_fin.addEventListener("click", function(e){
-    e.preventDefault();
-    let user=ValidarUsuario();
-    let psswd=validarPsswd();
-    let psswdR=validarPsswdR();
-    let valid=ValidaContras();
-    let SQ=ValidarPseg(); 
-    let ans=ValidarRespuestaS();
-
-    if(user===true && psswd===true && psswdR===true && valid===true && SQ===true  && ans===true){
-    alert("Registro finalizado con exito")
-    num[cont - 1].classList.add("active");
-    progressText[cont - 1].classList.add("active");
-    progressCheck[cont - 1].classList.add("active");
-    window.location.href="/"
-    }
-});
 
 function ValidarUsuario(){
     var user=document.getElementById("nUser").value;  
@@ -419,32 +518,6 @@ function ValidarRespuestaS(){
     }   
 }
 
-btn_atras1.addEventListener("click", function(e){
-    e.preventDefault();
-    movPag.style.marginLeft = "1%";
-    num[cont - 2].classList.remove("active");
-    progressText[cont - 2].classList.remove("active");
-    progressCheck[cont - 2].classList.remove("active");
-    cont-=1;
-});
-
-btn_atras2.addEventListener("click", function(e){
-    e.preventDefault();
-    movPag.style.marginLeft = "-20%";
-    num[cont - 2].classList.remove("active");
-    progressText[cont - 2].classList.remove("active");
-    progressCheck[cont - 2].classList.remove("active");
-    cont-=1;
-});
-
-btn_atras3.addEventListener("click", function(e){
-    e.preventDefault();
-    movPag.style.marginLeft = "-42%";
-    num[cont - 2].classList.remove("active");
-    progressText[cont - 2].classList.remove("active");
-    progressCheck[cont - 2].classList.remove("active");
-    cont-=1;
-});
 
 //Efectos de mostrado de contraseña
 eye1.onclick=(()=>{
@@ -466,3 +539,5 @@ eye2.onclick=(()=>{
         eye2.classList.remove("hide-btn")
     }
 })
+
+});

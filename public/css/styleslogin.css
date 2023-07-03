@@ -128,7 +128,6 @@ body{
     margin-left: .5em;
     width: 55%;
     height: 100%;
-    border: 1px solid;
     padding-left: .8em;
     background: transparent;
     color: rgb(0, 0, 0);
@@ -142,7 +141,6 @@ body{
     width: 50%;
     height: 100%;
     font-weight: 500;
-    background-color: A790A5;
     color: #000000;
     border: 1px solid rgb(27, 118, 222);
     padding-left: .8em;
@@ -153,7 +151,6 @@ body{
     height: 100%;
     border: none;
     border-radius: 4%;
-    background-color:  var(--colorPr);
     margin-left: .2em;
     color: white;
     text-transform: uppercase; /*?*/
@@ -173,12 +170,9 @@ body{
   }
 
   .formulario form .registro .botones button .volver{
-   /* margin-right: 0.5px;
-    font-size: 0.5em;*/
     height: 100%;
     border: none;
     border-radius: 4%;
-    background-color: var(--colorPr);
     margin-bottom: .4em;
     color: white;
     text-transform: uppercase;
@@ -186,12 +180,9 @@ body{
     font-weight: 500;
   }
   .formulario form .registro .botones button .adelante{
-    /*margin-right: 0.5px;
-    font-size: 0.5em;*/
     height: 100%;
     border: none;
     border-radius: 4%;
-    background-color: var(--colorPr);
     margin-bottom: .4em;
     color: white;
     text-transform: uppercase;
@@ -294,8 +285,6 @@ body{
   }
 
   .block {
-    /* Regla CSS que permite centrar el contenido en cada uno de los 
-      contenedores */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -347,7 +336,7 @@ body{
     top: 30%;
  }
  
- span .show-btn i.hide-btn::before{
+.show-btn span i.hide-btn::before{
     content: "\f070";
  }
 
@@ -793,6 +782,11 @@ body{
   padding-bottom: 1rem !important;
 }
 
-.card{
+.card2{
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
   border-color: #000;
 }
