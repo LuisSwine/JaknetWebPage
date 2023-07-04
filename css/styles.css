@@ -165,6 +165,7 @@
 
 /*termina seccion de clientes o socios*/
 :root {
+  --bs-jak: #007991;
   --bs-blue: #1e30f3;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -8487,6 +8488,11 @@ textarea.form-control-lg {
 .bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-jak{
+  --bs-bg-opacity:1;
+  background-color: rgba(var(--bs-jak), var(--bs-bg-opacity)) !important;
 }
 
 .bg-body {

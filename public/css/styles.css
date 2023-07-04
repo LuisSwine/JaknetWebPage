@@ -63,8 +63,8 @@
 
 
 .logonav{
-  width: 130px;
-  height: 80px;
+  width: 150px;
+  height: 100px;
 }
 
 .btn-container a.btn{
@@ -165,6 +165,7 @@
 
 /*termina seccion de clientes o socios*/
 :root {
+  --bs-jak: #007991;
   --bs-blue: #1e30f3;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -3891,9 +3892,10 @@ textarea.form-control-lg {
 }
 
 .navbar {
+  --bs-navbar-bg: #00236D;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(0, 0, 0, 0.55);
+  --bs-navbar-color: #E4FDE1;
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
@@ -3917,6 +3919,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  background-color: var(--bs-navbar-bg);
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -8487,6 +8490,11 @@ textarea.form-control-lg {
 .bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-jak{
+  --bs-bg-opacity:1;
+  background-color: rgba(var(--bs-jak), var(--bs-bg-opacity)) !important;
 }
 
 .bg-body {
