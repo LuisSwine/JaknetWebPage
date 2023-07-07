@@ -1,4 +1,33 @@
-<%-include ('./partials/head',{titulo:'Jaknet'}) %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Jaknet</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/assets/img/logo.png" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />
+        <link href="/css/blog.css" rel="stylesheet" />
+        <link href="/css/styleslogin.css" rel="stylesheet"/>
+        <link href="/css/usuario.css" rel="stylesheet" />
+
+        
+    </head>
 
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
@@ -23,7 +52,7 @@
         <header class="py-5">
             <div class="container px-5 pb-5">
                 <div class="row gx-5 align-items-center">
-                    <div class="col-xxl-6">
+                    <div class="col-xl-6">
                         <!-- Header text content-->
                         <div class="text-center text-xxl-start">
                             <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Cableado Estructurado &middot; Videovigilancia &middot; Seguridad &middot; Asesoría</div></div>
@@ -31,7 +60,7 @@
                             <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Enfocados al cliente</span></h1>
                         </div>
                     </div>
-                    <div class="col-xxl-6">
+                    <div class="col-xl-6">
                         <div id="imageSlider" class="carousel slide" data-bs-ride="carousel">
                           <!--Indicadores de imagenes-->
                           <ol class="carousel-indicators">
@@ -123,14 +152,14 @@
                                 <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                                   <div class="box">
                                     <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
-                                    <h4 class="title"><a href="/servicios">Cableado Estructurado</a></h4>
+                                    <h4 class="title"><a href="/servicios#infra">Infraestructura de Red</a></h4>
                                     <p class="description">La infraestructura de red es el corazón de la comunicación y acceso a la información en cualquier empresa. No te conformes con un trabajo simple y sin escalabilidad. </p>
                                   </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
                                   <div class="box">
                                     <div class="icon"><i class="bi bi-card-checklist" style="color: #e9bf06;"></i></div>
-                                    <h4 class="title"><a href="/servicios">Seguridad y Videovigilancia</a></h4>
+                                    <h4 class="title"><a href="/servicios#seguridad">Sistemas de Seguridad</a></h4>
                                     <p class="description">Ofrecemos instalación y puesta a punto de los mejores equipos y sistemas de videovigilancia CCTV y seguridad para que estes siempre protegido.</p>
                                   </div>
                                 </div>
@@ -138,33 +167,66 @@
                                 <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                                   <div class="box">
                                     <div class="icon"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
-                                    <h4 class="title"><a href="/servicios">Control de Acceso</a></h4>
-                                    <p class="description">Tenemos para ti los mejores sistemas de control de acceso e identificación para que nunca tengas problemas de intrusión.</p>
+                                    <h4 class="title"><a href="/servicios#comus">Comunicaciones</a></h4>
+                                    <p class="description">Ponemos a su disposición una amplia gama de servicios en
+                                      equipo activo de comunicación con una completa oferta de
+                                      diversas marcas en Routers, Switches, Access Points, Controladoras, etc.</p>
                                   </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
                                   <div class="box">
                                     <div class="icon"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
-                                    <h4 class="title"><a href="/servicios">Radio y Comunicación</a></h4>
+                                    <h4 class="title"><a href="/servicios#radio">Radio Comunicación</a></h4>
                                     <p class="description">No hay nada más importante en un buen equipo que la comunicación. Ponemos a tu disposición los mejores equipos de radiocomunicación que se adaptan a cualquier entorno y trabajo. </p>
                                   </div>
                                 </div>
                       
                                 <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                                   <div class="box">
-                                    <div class="icon"><i class="bi bi-brightness-high" style="color: #d6ff22;"></i></div>
-                                    <h4 class="title"><a href="/servicios">IOT & Smart-Home</a></h4>
+                                    <div class="icon"><i class="bi bi-calendar4-week" style="color: #4680ff;"></i></div>
+                                    <h4 class="title"><a href="/servicios#smart">Smart-Home</a></h4>
                                     <p class="description">Te ofrecemos los mejores equipos y sistemas con la más reciente tecnología para hacer de tu hogar un sistema inteligente en la palma de tu mano con IoT y los sistemas Smart-Home.</p>
                                   </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
                                   <div class="box">
-                                    <div class="icon"><i class="bi bi-calendar4-week" style="color: #4680ff;"></i></div>
-                                    <h4 class="title"><a href="/servicios">Energía</a></h4>
+                                    <div class="icon"><i class="bi bi-brightness-high" style="color: #d6ff22;"></i></div>
+                                    <h4 class="title"><a href="/servicios#energia">Energía</a></h4>
                                     <p class="description">Proteger tus equipos electrónicos de descargas inesperadas, tener respaldos de energía con plantas y generadores, o integrarte al negocio energético con paneles solares, etc.</p>
                                   </div>
                                 </div>
-                      
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-code-slash" style="color: #22ffbd;"></i></div>
+                                    <h4 class="title"><a href="/servicios#software">Software</a></h4>
+                                    <p class="description">Manejamos el mejor software para cualquier
+                                      necesidad como lo son Office Productivity Software, SW Almacenamiento, SW Gestionamiento IT, SW Virtualización, SW Desarroll, SW Entretenimiento, Sw Finanzas, etc.</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-motherboard" style="color: #e946ff;"></i></div>
+                                    <h4 class="title"><a href="/servicios#hardware">Hardware</a></h4>
+                                    <p class="description">Contamos con los mejores equipos de cómputo del momento, desde All-in-1, UltraBooks, Desktops y Laptops.</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-ethernet" style="color: #28a81c;"></i></div>
+                                    <h4 class="title"><a href="/servicios#asesoria">Asesoría y Proyectos TI</a></h4>
+                                    <p class="description">Apoyo en contratación de
+                                      personal de TI, definición de procesos de
+                                      trabajo con buenas prácticas de TI basados en ITIL (mesa de
+                                      ayuda), asesoría para compra de equipo y tecnología.</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                                  <div class="box">
+                                    <div class="icon"><i class="bi bi-cloud-check" style="color: #ff4646;"></i></div>
+                                    <h4 class="title"><a href="/servicios#cloud">Cloud Computing</a></h4>
+                                    <p class="description">En colaboración con las mejores marcas ponemos a tu alcance las mejores soluciones para tu centro de datos, te brindamos los mejores servidores de almacenamiento y de información, para que tu equipo crezca a la par de tu negocio.</p>
+                                  </div>
+                                </div>
                             </div>
                             <p class="lead fw-light mb-4">Estos solo son algunos de los servicios que podemos ofrecerte. Selecciona alguno y descubre todo lo que tenemos para ti </p>
 
