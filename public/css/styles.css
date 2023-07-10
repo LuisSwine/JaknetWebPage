@@ -753,6 +753,10 @@ progress {
   content: "— ";
 }
 
+.carousel-item img{
+  cursor: pointer;
+}
+
 .img-fluid {
   /* max-width: 100%; */
   display: flex;
