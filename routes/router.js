@@ -44,21 +44,22 @@ router.post('/send-email', (req, res) =>{
     
     `;
 
-    const destinatarioGsuite = 'eduardoleon1266@gmail.com';
+    const destinatarioGsuite = 'correo_gsuite';
     const destinatarioYahoo1 = 'proyectos@tekcomit.net';
     const destinatarioYahoo2 = 'correo_destino_yahoo_2';
 
     // Configurar el transportador de correo electrónico
+    /*
     const transporterGsuite = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         auth: {
-            user: 'eduardoleon1266@gmail.com',
+            user: 'correo_gsuite',
             pass: 'ddqlccckcfkcilzm'
         }
     });
-
+    */
     const transporterYahoo1 = nodemailer.createTransport({
         service: 'yahoo',
         auth: {
@@ -84,12 +85,12 @@ router.post('/send-email', (req, res) =>{
     */
     const mailOptions = {
         from: email,
-        to: `${destinatarioGsuite}, ${destinatarioYahoo1}`,
+        to: `${destinatarioYahoo1}`,
         subject: 'Contacto cliente',
         html: contentHTML
     };
 
-    
+    /*
     transporterGsuite.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
@@ -97,7 +98,7 @@ router.post('/send-email', (req, res) =>{
           console.log('Correo electrónico enviado a G Suite: ' + info.response);
         }
     });
-    
+    */
     transporterYahoo1.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
