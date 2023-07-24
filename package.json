@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,25 +18,15 @@
   },
   "homepage": "https://github.com/LuisSwine/JaknetWebPage#readme",
   "dependencies": {
+    "@angular/cli": "^15.2.0",
     "bcryptjs": "^2.4.3",
     "body-parse": "^0.1.0",
-    "connect-multiparty": "^2.2.0",
     "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "express-promise-router": "^4.1.1",
-    "firebase": "^9.23.0",
-    "jsonwebtoken": "^9.0.1",
-    "mongoose": "^7.3.2",
     "nodemailer": "^6.9.3",
     "nodemon": "^2.0.22"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.22.6",
-    "@babel/core": "^7.22.8",
-    "@babel/node": "^7.22.6",
-    "@babel/preset-env": "^7.22.7"
-  }
+  "devDependencies": {}
 }
