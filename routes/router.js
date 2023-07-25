@@ -30,6 +30,14 @@ router.get('/registro', (req, res) => {
     res.render('registro'); 
 });
 
+router.get('/infraestructura', (req, res) => {
+    res.render('infraestructurared'); 
+});
+
+router.get('/sistemaseguridad', (req, res) => {
+    res.render('sistemass'); 
+});
+
 router.post('/send-email', (req, res) =>{
     console.log(req.body); 
     const { Nombre, email, Telefono, Mensaje} = req.body;

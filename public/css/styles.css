@@ -3911,6 +3911,70 @@ textarea.form-control-lg {
   display: block;
 }
 
+/* Oculta la lista de subniveles por defecto */
+nav ul ul {
+  display: none;
+  box-shadow: 0 1rem 1rem rgba(104, 97, 97, 0.2); /* Sombra para un aspecto flotante */
+  border-radius: 1rem; /* Bordes redondeados */
+  padding: 1px; /* Espaciado interno */
+  margin: 0;
+}
+
+/* Estilo básico del menú de navegación */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative; /* Importante para el menú desplegable */
+}
+
+/* Estilo de los enlaces */
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Estilo del menú desplegable */
+nav ul li:hover ul {
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Posición del menú desplegable */
+nav ul ul {
+  top: 100%;
+  left: 0;
+}
+
+/* Estilo de los enlaces del menú desplegable */
+nav ul ul li {
+  display: block;
+  background-color: #00236D;
+}
+
+nav ul ul li a {
+  color: #333;
+}
+
+nav ul ul li a:hover {
+  background-color: #ddd;
+}
+
+.menu-icon {
+  transition: transform 0.3s ease;
+}
+
+nav ul li:hover .menu-icon {
+  transform: rotate(90deg);
+}
+
 .navbar {
   --bs-navbar-bg: #00236D;
   --bs-navbar-padding-x: 0;
