@@ -18,6 +18,10 @@ router.get('/contacto', (req, res) => {
     res.render('contacto'); 
 });
 
+router.get('/about', (req, res) => {
+    res.render('about'); 
+});
+
 router.get('/perfil', (req, res) => {
     res.render('perfil'); 
 });
