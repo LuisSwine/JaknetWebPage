@@ -12,4 +12,10 @@ select{
     padding-left: .8em;
     padding-right: .8em;
     cursor: pointer;
+    background-color: rgb(255, 255, 255);
   }
+
+.dark-mode .select{
+  background-color:#4a4141 ;
+  color: white;
+}

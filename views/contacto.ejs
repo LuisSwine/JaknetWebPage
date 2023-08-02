@@ -52,6 +52,10 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                        <label class="switch nav-item mb-2 px-2">
+                            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                            <span class="slider round"></span>
+                        </label>
                     </ul>
                 </div>
             </div>
@@ -60,7 +64,7 @@
         <section class="py-5">
             <div class="container px-5">
                 <!-- Contact form-->
-                <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                <div id="formularioo" class="rounded-4 py-5 px-4 px-md-5">
                     <div class="text-center mb-5">
                         <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Contáctanos</span></h1>
                         <p class="lead fw-normal text-muted mb-0">En Jaknet decides como comunicarte</p>
@@ -136,7 +140,7 @@
         </section>
     </main>
     <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
+    <footer class="py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto"><div class="small m-0">Copyright &copy; Jaknet</div></div>
@@ -155,6 +159,7 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/formulario.js"></script>
+    <script src="js/darkmode.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

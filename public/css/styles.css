@@ -79,6 +79,7 @@
   flex-wrap: wrap;
   padding: 60px 0 40px 0;
   box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  background-color: #f4f5fd;
 }
 
 #services .box {
@@ -136,6 +137,7 @@
 #clients {
   padding: 60px 0;
   box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  background-color: #eeeff7;
 }
 
 #clients .clients-wrap {
@@ -247,6 +249,128 @@
   }
 }
 
+/* Boton switch */
+/* Agrega estilos CSS para el botón de tipo switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + .slider {
+  background-color: #007991; /* Color para el modo oscuro */
+}
+
+input[type="checkbox"]:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+  /* Cambiar los colores de fondo y texto para el modo oscuro */
+  background-color: #353030;
+  color: #ffffff;
+}
+
+.dark-mode #services{
+  background-color: #3e3838;
+}
+
+.dark-mode #clients{
+  background-color: #393434;
+}
+
+#formularioo{
+  background-color: #f4f5fd;
+}
+
+.dark-mode #formularioo{
+  background-color: #4a4141;
+}
+
+.dark-mode #formulario label{
+  color: #000;
+}
+
+.dark-mode #services .box{
+  background-color: #4a4141;
+}
+
+.dark-mode #services .title a{
+  color: var(--bs-jak);
+}
+
+.dark-mode #clients .client-logo{
+  background-color: #4a4141;
+}
+
+footer{
+  background-color: #ffffff;
+}
+
+.dark-mode footer{
+  background-color: #292626;
+}
+
+.dark-mode .card{
+  background-color: #4a4141;
+}
+
+#cservicios{
+  background-color: #f4f5fd;
+}
+
+.dark-mode #cservicios{
+  background-color: #353030;
+}
+
+.dark-mode #cservicios .btn-outline-dark{
+  --bs-btn-color: #f3f7fa;
+  --bs-btn-border-color: #f2f6f9;
+  --bs-btn-hover-color: #68b7e5;
+  --bs-btn-hover-bg: #ffffff;
+  --bs-btn-hover-border-color: #eaf0f6;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #151515;
+  --bs-btn-active-bg: #ffffff;
+  --bs-btn-active-border-color: #fbfcfe;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #ebf5ff;
+  --bs-gradient: none;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -255,10 +379,12 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color:#bcbfde;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+
 
 hr {
   margin: 1rem 0;
@@ -8565,7 +8691,7 @@ nav ul li:hover .menu-icon {
 
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  /* background-color: var(--bs-gray-100) ; */
 }
 
 .bg-dark {

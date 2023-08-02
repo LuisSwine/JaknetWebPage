@@ -52,6 +52,10 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                        <label class="switch nav-item mb-2 px-2">
+                          <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                          <span class="slider round"></span>
+                        </label>
                     </ul>
                 </div>
             </div>
@@ -123,7 +127,7 @@
             </div>
         </header>
         <!-- Servicios-->
-        <section id="services" class="bg-light py-5">
+        <section id="services" class=" py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
@@ -222,11 +226,11 @@
         </section>
 
         <!--Socios-->
-        <section id="clients" class="bg-light py-5">
+        <section id="clients" class="py-5">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
-                        <div class="text-center my-5">
+                        <div class="text-center my-1">
                             <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Partners</span></h2>
                             <!--p class="lead fw-light mb-4">Contamos con los mejores socios... </p-->
                             
@@ -292,7 +296,7 @@
         </section>            
     </main>
     <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
+    <footer class="py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto"><div class="small m-0">Copyright &copy; Jaknet</div></div>
@@ -311,5 +315,6 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/carrusel.js"></script>
+    <script src="js/darkmode.js"></script>
 </body>
 </html>
