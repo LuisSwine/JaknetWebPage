@@ -42,6 +42,34 @@ router.get('/sistemaseguridad', (req, res) => {
     res.render('sistemass'); 
 });
 
+router.get('/telecomunicaciones', (req, res) => {
+    res.render('telecomunicaciones'); 
+});
+
+router.get('/smarth', (req, res) => {
+    res.render('smarth'); 
+});
+
+router.get('/energia', (req, res) => {
+    res.render('energia'); 
+});
+
+router.get('/software', (req, res) => {
+    res.render('software'); 
+});
+
+router.get('/hardware', (req, res) => {
+    res.render('hardware'); 
+});
+
+router.get('/asesoria', (req, res) => {
+    res.render('asesoria'); 
+});
+
+router.get('/cloud', (req, res) => {
+    res.render('cloud'); 
+});
+
 router.post('/send-email', (req, res) =>{
     console.log(req.body); 
     const { Nombre, email, Telefono, Mensaje} = req.body;

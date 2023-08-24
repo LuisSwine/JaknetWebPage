@@ -39,6 +39,15 @@ export class ProductService {
     );
   }
 
+  showProduct(product_id=''){
+    this.isLoadingSubject.next(true);
+    let headers = new HttpHeaders({'token': this.authservice.token});
+    let URL = URL_SERVICIOS+"/products/show/"+product_id;
+    return this.http.get(URL,{headers: headers}).pipe(
+      finalize(() => this.isLoadingSubject.next(false))
+    );
+  }
+
   createProduct(data){
     this.isLoadingSubject.next(true);
     let headers = new HttpHeaders({'token': this.authservice.token});
