@@ -300,6 +300,24 @@ input[type="checkbox"]:checked + .slider:before {
   /* Cambiar los colores de fondo y texto para el modo oscuro */
   background-color: #353030;
   color: #ffffff;
+  /* background-image: url(/assets/img/fondos.jpg), var(--bs-bg-opacity); */
+}
+
+.imaemf::before{
+  content: "";
+  background-image: url(/assets/img/fondos3.jpg);
+  opacity: 0.5; /* Cambia el valor de la opacidad según tus preferencias */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.imaemf {
+  position: relative;
+  background-image: url(/assets/img/fondos3.jpg);
 }
 
 .dark-mode #services{
