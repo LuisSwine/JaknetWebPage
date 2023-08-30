@@ -25,7 +25,7 @@ export class ProductService {
     this.isLoadingSubject.next(true);
     let headers = new HttpHeaders({'token': this.authservice.token});
     let LINK = "";
-    if(search && search != ''){
+    if(search){
       LINK += "?search="+search
     }else{
       LINK += "?search=";
@@ -74,8 +74,8 @@ export class ProductService {
       finalize(() => this.isLoadingSubject.next(false))
     );
   }
-
-  //Galeria
+  
+  // galeria
 
   createGaleria(data){
     this.isLoadingSubject.next(true);

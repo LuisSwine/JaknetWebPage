@@ -6,21 +6,21 @@ import { EditNewProductComponent } from './edit-new-product/edit-new-product.com
 import { ListProductsComponent } from './list-products/list-products.component';
 
 const routes: Routes = [{
-  path:'',
-  component:ProductComponent,
+  path: '',
+  component: ProductComponent,
   children:[
     {
-      path:'registrar-producto',
+      path: 'registrar-producto',
       component: AddNewProductComponent,
     },
     {
-      path:'editar-producto/:id',
+      path: 'editar-producto/:id',
       component: EditNewProductComponent,
     },
     {
-      path:'lista-de-todos-los-productos',
+      path: 'lista-de-todos-los-productos',
       component: ListProductsComponent,
-    },
+    }
   ]
 }];
 

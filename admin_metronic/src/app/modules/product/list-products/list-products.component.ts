@@ -16,7 +16,7 @@ export class ListProductsComponent implements OnInit {
 
   products:any = [];
   isLoading$:any;
-  search:any = '';
+  search:any = null;
   categorie:any = '';
 
   categories:any = [];
@@ -57,6 +57,7 @@ export class ListProductsComponent implements OnInit {
     this.categorie = null;
     this.search = null;
     this.allProducts();
+    
   }
   editProduct(product){
     this.router.navigateByUrl("/productos/editar-producto/"+product._id);

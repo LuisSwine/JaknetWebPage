@@ -5,6 +5,9 @@ import { Toaster } from 'ngx-toast-notifications';
 import { CategoriesService } from '../../categories/_services/categories.service';
 import { ProductService } from '../_services/product.service';
 import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
+import { EditNewVariedadComponent } from '../variedades/edit-new-variedad/edit-new-variedad.component';
+import { DeleteNewVariedadComponent } from '../variedades/delete-new-variedad/delete-new-variedad.component';
+import { DeleteGaleriaImagenComponent } from '../delete-galeria-imagen/delete-galeria-imagen.component';
 
 @Component({
   selector: 'app-edit-new-product',
@@ -107,6 +110,153 @@ export class EditNewProductComponent implements OnInit {
     reader.readAsDataURL(this.imagen_file);
     reader.onloadend = () => this.imagen_previzualizacion = reader.result;
     this.loadServices();
+  }
+
+  processFileGaleria($event){
+    if($event.target.files[0].type.indexOf("image") < 0){
+      this.imagen_previz_galeria = null;
+      this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! Necesita ingresar un archivo de tipo imagen.'`});
+      return;
+    }
+    this.imagen_file_galeria = $event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(this.imagen_file_galeria);
+    reader.onloadend = () => this.imagen_previz_galeria = reader.result;
+    this.loadServices();
+  }
+
+  addTag(){
+    this.tags.push(this.tag);
+    this.tag = "";
+  }
+  removeTag(i){
+    this.tags.splice(i,1);
+  }
+
+  update(){
+    if(!this.title || !this.categorie || !this.price_pesos || !this.price_usd || !this.resumen || !this.description
+      || !this.sku || this.tags.length == 0){
+        this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! NECESITAS DIGITAR TODOS LOS CAMPOS DEL FORMULARIO.'`});
+        return;
+    }
+    let formData = new FormData();
+    formData.append("_id",this.product_id);
+    formData.append("title",this.title);
+    formData.append("categorie",this.categorie);
+    formData.append("sku",this.sku);
+    formData.append("price_pesos",this.price_pesos);
+    formData.append("price_usd",this.price_usd);
+    formData.append("description",this.description);
+    formData.append("resumen",this.resumen);
+    formData.append("type_inventario",this.type_inventario);
+    formData.append("tags",JSON.stringify(this.tags));
+    formData.append("stock",this.stock);
+    if(this.imagen_file){
+      formData.append("imagen",this.imagen_file);
+    }
+
+    this._productService.updateProduct(formData).subscribe((resp:any) => {
+      console.log(resp);
+      if(resp.code == 403){
+        this.toaster.open(NoticyAlertComponent,{text:`danger-'UPPS ! EL PRODUCTO YA EXISTE, DIGITAR OTRO NOMBRE'`});
+        return;
+      }else{
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'EL PRODUCTO SE HA EDITADO CON EXITO'`});
+        return;
+      }
+    })
+
+  }
+
+  listProducts(){
+    this.router.navigateByUrl("/productos/lista-de-todos-los-productos");
+  }
+
+  checkedInventario(value){
+    this.type_inventario = value;
+  }
+
+  saveVariedad(){
+    if(!this.valor_multiple || 
+      !this.stock_multiple){
+        this.toaster.open(NoticyAlertComponent,{text:`danger-'ES NECESARIO DIGITAR UN VALOR Y UNA CANTIDAD'`});
+        return;
+    }
+    let data = {
+      product: this.product_id,
+      valor: this.valor_multiple,
+      stock: this.stock_multiple,
+    }
+    this._productService.createVariedad(data).subscribe((resp:any) => {
+      console.log(resp);
+      
+      this.valor_multiple = null;
+      this.stock_multiple = null;
+      let index = this.variedades.findIndex(item => item._id == resp.variedad._id);
+      if(index != -1){
+        this.variedades[index] = resp.variedad;
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'LA VARIEDAD SE EDITO CORRECTAMENTE'`});
+      }else{
+        this.variedades.unshift(resp.variedad)
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'LA VARIEDAD SE REGISTRO CORRECTAMENTE'`});
+      }
+    })
+  }
+
+  editVariedad(variedad){
+    const modalRef = this.modalService.open(EditNewVariedadComponent,{centered:true, size: 'sm'});
+    modalRef.componentInstance.variedad = variedad;
+
+    modalRef.componentInstance.VariedadE.subscribe((variedadE:any) => {
+      let index = this.variedades.findIndex(item => item._id == variedadE._id);
+      if(index != -1){
+        this.variedades[index] = variedadE;
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'LA VARIEDAD SE EDITO CORRECTAMENTE'`});
+      }
+    })
+  }
+  deleteVariedad(variedad){
+    const modalRef = this.modalService.open(DeleteNewVariedadComponent,{centered:true, size: 'sm'});
+    modalRef.componentInstance.variedad = variedad;
+
+    modalRef.componentInstance.VariedadD.subscribe((resp:any) => {
+      let index = this.variedades.findIndex(item => item._id == variedad._id);
+      if(index != -1){
+        this.variedades.splice(index,1);
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'LA VARIEDAD SE ELIMINO CORRECTAMENTE'`});
+      }
+    })
+  }
+
+  storeImagen(){
+    if(!this.imagen_file_galeria){
+      this.toaster.open(NoticyAlertComponent,{text:`danger-'NECESITAS SELECCIONAR UNA IMAGEN'`});
+      return;
+    }
+    let formData = new FormData();
+    formData.append("_id",this.product_id);
+    formData.append("imagen",this.imagen_file_galeria);
+    formData.append("__id",new Date().getTime().toString());
+    this._productService.createGaleria(formData).subscribe((resp:any) => {
+      console.log(resp);
+      this.imagen_file_galeria = null;
+      this.imagen_previz_galeria = null;
+      this.galerias.unshift(resp.imagen);
+    })
+  }
+
+  removeImagen(imagen){
+    const modalRef = this.modalService.open(DeleteGaleriaImagenComponent,{centered:true, size: 'sm'});
+    modalRef.componentInstance.imagen = imagen; 
+    modalRef.componentInstance.product_id = this.product_id;
+    
+    modalRef.componentInstance.ImagenD.subscribe((resp:any) => {
+      let index = this.galerias.findIndex(item => item._id == imagen._id);
+      if(index != -1){
+        this.galerias.splice(index,1);
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'LA IMAGEN SE ELIMINO CORRECTAMENTE'`});
+      }
+    })
   }
 
 }

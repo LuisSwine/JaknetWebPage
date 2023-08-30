@@ -7,13 +7,13 @@ export default {
     register: async(req,res) => {
         try {
             let data = req.body;
-
+            
             let valid_Product = await models.Product.findOne({title: data.title});
 
             if(valid_Product){
                 res.status(200).json({
                     code: 403,
-                    message: "EL PRODUCTO YA EXISTE"
+                    message: 'EL PRODUCTO YA EXISTE'
                 });
                 return;
             }
@@ -31,17 +31,17 @@ export default {
             res.status(200).json({
                 message: "EL PRODUCTO SE REGISTRO CON EXITO"
             });
-            
+
         } catch (error) {
             res.status(500).send({
-                message: "OCURRIO UN PROBLEMA"
+                message: "COURRIO UN PROBLEMA"
             });
         }
     },
     update:async(req,res) => {
         try {
             let data = req.body;
-
+            
             let valid_Product = await models.Product.findOne({title: data.title, _id: {$ne : data._id}});
 
             if(valid_Product){
@@ -63,18 +63,18 @@ export default {
             await models.Product.findByIdAndUpdate({_id:data._id},data);
 
             res.status(200).json({
-                message: "EL PRODUCTO SE ACTUALIZO CON EXITO"
+                message: "EL PRODUCTO SE REGISTRO SE ACTUALIZO CON EXITO"
             });
-            
+
         } catch (error) {
             res.status(500).send({
-                message: "OCURRIO UN PROBLEMA"
+                message: "COURRIO UN PROBLEMA"
             });
         }
     },
     list:async(req,res) => {
         try {
-            let filter = [];
+            var filter = [];
             if(req.query.search){
                 filter.push(
                     {"title": new RegExp(req.query.search,'i')},
@@ -87,7 +87,7 @@ export default {
             }
             let products = await models.Product.find({
                 $and:filter,
-            }).populate('categorie').exec()
+            }).populate('categorie')
             products = products.map(product => {
                 return resources.Product.product_list(product);
             })
@@ -97,7 +97,7 @@ export default {
             })
         } catch (error) {
             res.status(500).send({
-                message: "OCURRIO UN PROBLEMA"
+                message: "COURRIO UN PROBLEMA"
             });
         }
     },
@@ -111,7 +111,7 @@ export default {
             });
         } catch (error) {
             res.status(500).send({
-                message: "OCURRIO UN PROBLEMA"
+                message: "COURRIO UN PROBLEMA"
             });
         }
     },
@@ -130,7 +130,7 @@ export default {
             })
         } catch (error) {
             res.status(500).send({
-                message: 'OCURRIO UN PROBLEMA'
+                message: "OCURRIO UN PROBLEMA"
             });
             console.log(error);
         }
@@ -156,7 +156,7 @@ export default {
             var img_path = req.files.imagen.path;
             var name = img_path.split('\\');
             var imagen_name = name[2];
-
+            
             let product = await models.Product.findByIdAndUpdate({_id: req.body._id},{
                 $push: {
                     galerias: {
@@ -166,7 +166,7 @@ export default {
                 }
             })
             res.status(200).json({
-                message: "LA IMAGEN SE SUIBIO CON EXITO",
+                message: "LA IMAGEN SE SUBIO PERFECTAMENTE",
                 imagen: {
                     imagen: 'http://localhost:3000'+'/api/products/uploads/product/'+imagen_name,
                     _id: req.body.__id
@@ -174,7 +174,7 @@ export default {
             })
         } catch (error) {
             res.status(500).send({
-                message: 'OCURRIO UN PROBLEMA'
+                message: "OCURRIO UN PROBLEMA"
             });
         }
     },
@@ -188,11 +188,11 @@ export default {
                 }
             })
             res.status(200).json({
-                message: "LA IMAGEN SE ELIMINO CON EXITO",
+                message: "LA IMAGEN SE ELIMINO PERFECTAMENTE",
             })
         } catch (error) {
             res.status(500).send({
-                message: 'OCURRIO UN PROBLEMA'
+                message: "OCURRIO UN PROBLEMA"
             });
         }
     },

@@ -1,18 +1,19 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Toaster } from 'ngx-toast-notifications';
-import { ProductService } from '../_services/product.service';
 import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
+import { ProductService } from '../_services/product.service';
 
 @Component({
-  selector: 'app-delete-new-product',
-  templateUrl: './delete-new-product.component.html',
-  styleUrls: ['./delete-new-product.component.scss']
+  selector: 'app-delete-galeria-imagen',
+  templateUrl: './delete-galeria-imagen.component.html',
+  styleUrls: ['./delete-galeria-imagen.component.scss']
 })
-export class DeleteNewProductComponent implements OnInit {
+export class DeleteGaleriaImagenComponent implements OnInit {
 
-  @Output() ProductD: EventEmitter<any> = new EventEmitter();
-  @Input() product:any;
+  @Output() ImagenD: EventEmitter<any> = new EventEmitter();
+  @Input() imagen:any;
+  @Input() product_id:any;
 
   constructor(
     public modal: NgbActiveModal,
@@ -23,10 +24,15 @@ export class DeleteNewProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   delete(){
-    this.productoService.deleteProduct(this.product._id).subscribe((resp:any) => {
+    let data = {
+      _id: this.product_id,
+      __id: this.imagen._id,
+    }
+    this.productoService.deleteGaleria(data).subscribe((resp:any) => {
       console.log(resp);
-      this.ProductD.emit("");
+      this.ImagenD.emit("");
       this.modal.close();
     }, (error) => {
       if(error.error){
@@ -34,5 +40,5 @@ export class DeleteNewProductComponent implements OnInit {
       }
     })
   }
-  
+
 }
