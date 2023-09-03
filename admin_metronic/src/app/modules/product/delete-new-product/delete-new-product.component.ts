@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Toaster } from 'ngx-toast-notifications';
-import { ProductService } from '../_services/product.service';
 import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
+import { ProductService } from '../_services/product.service';
 
 @Component({
   selector: 'app-delete-new-product',
@@ -23,6 +23,7 @@ export class DeleteNewProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   delete(){
     this.productoService.deleteProduct(this.product._id).subscribe((resp:any) => {
       console.log(resp);
@@ -34,5 +35,5 @@ export class DeleteNewProductComponent implements OnInit {
       }
     })
   }
-  
+
 }

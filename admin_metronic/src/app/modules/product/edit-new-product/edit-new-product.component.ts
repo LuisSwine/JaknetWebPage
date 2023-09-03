@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Toaster } from 'ngx-toast-notifications';
-import { CategoriesService } from '../../categories/_services/categories.service';
-import { ProductService } from '../_services/product.service';
 import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
-import { EditNewVariedadComponent } from '../variedades/edit-new-variedad/edit-new-variedad.component';
-import { DeleteNewVariedadComponent } from '../variedades/delete-new-variedad/delete-new-variedad.component';
+import { CategoriesService } from '../../categories/_services/categories.service';
 import { DeleteGaleriaImagenComponent } from '../delete-galeria-imagen/delete-galeria-imagen.component';
+import { DeleteNewVariedadComponent } from '../variedades/delete-new-variedad/delete-new-variedad.component';
+import { EditNewVariedadComponent } from '../variedades/edit-new-variedad/edit-new-variedad.component';
+import { ProductService } from '../_services/product.service';
 
 @Component({
   selector: 'app-edit-new-product',
@@ -29,6 +29,7 @@ export class EditNewProductComponent implements OnInit {
   imagen_previzualizacion:any = null;
   resumen:any = null;
   description:any = null;
+  state:any = 1;
   // 
   tag:any = null;
   tags:any = [];
@@ -70,9 +71,7 @@ export class EditNewProductComponent implements OnInit {
       this.categorie = this.product_selected.categorie._id;
       this.price_pesos = this.product_selected.price_pesos;
       this.price_usd = this.product_selected.price_usd;
-
       
-
       this.stock = this.product_selected.stock;
 
       this.imagen_previzualizacion = this.product_selected.imagen;
@@ -81,7 +80,7 @@ export class EditNewProductComponent implements OnInit {
       this.tags = this.product_selected.tags;
       this.variedades = this.product_selected.variedades;
       this.type_inventario = this.product_selected.type_inventario;
-
+      this.state = this.product_selected.state;
       this.galerias = this.product_selected.galerias;
     })
 
@@ -148,6 +147,7 @@ export class EditNewProductComponent implements OnInit {
     formData.append("price_usd",this.price_usd);
     formData.append("description",this.description);
     formData.append("resumen",this.resumen);
+    formData.append("state",this.state);
     formData.append("type_inventario",this.type_inventario);
     formData.append("tags",JSON.stringify(this.tags));
     formData.append("stock",this.stock);
@@ -162,6 +162,7 @@ export class EditNewProductComponent implements OnInit {
         return;
       }else{
         this.toaster.open(NoticyAlertComponent,{text:`primary-'EL PRODUCTO SE HA EDITADO CON EXITO'`});
+        this.router.navigateByUrl("/productos/lista-de-todos-los-productos");
         return;
       }
     })
@@ -258,5 +259,4 @@ export class EditNewProductComponent implements OnInit {
       }
     })
   }
-
 }

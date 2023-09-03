@@ -12,18 +12,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbModalModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { CRUDTableModule } from 'src/app/_metronic/shared/crud-table';
-import { EditorModule } from '@tinymce/tinymce-angular'
-import { DeleteGaleriaImagenComponent } from './delete-galeria-imagen/delete-galeria-imagen.component';
-import { DeleteNewVariedadComponent } from './variedades/delete-new-variedad/delete-new-variedad.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { EditNewVariedadComponent } from './variedades/edit-new-variedad/edit-new-variedad.component';
+import { DeleteNewVariedadComponent } from './variedades/delete-new-variedad/delete-new-variedad.component';
+import { DeleteGaleriaImagenComponent } from './delete-galeria-imagen/delete-galeria-imagen.component';
 
 
 @NgModule({
-  declarations: [ProductComponent, AddNewProductComponent, EditNewProductComponent, DeleteNewProductComponent, ListProductsComponent, DeleteGaleriaImagenComponent, DeleteNewVariedadComponent, EditNewVariedadComponent],
+  declarations: [ProductComponent, AddNewProductComponent, EditNewProductComponent, DeleteNewProductComponent, ListProductsComponent, EditNewVariedadComponent, DeleteNewVariedadComponent, DeleteGaleriaImagenComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,
-    //
+    // 
     HttpClientModule,
     FormsModule,
     NgbModule,
@@ -32,7 +32,7 @@ import { EditNewVariedadComponent } from './variedades/edit-new-variedad/edit-ne
     CRUDTableModule,
     NgbModalModule,
     NgbDatepickerModule,
-    EditorModule,
+    EditorModule
   ]
 })
 export class ProductModule { }

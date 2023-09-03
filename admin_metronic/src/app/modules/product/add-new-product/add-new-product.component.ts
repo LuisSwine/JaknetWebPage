@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Toaster } from 'ngx-toast-notifications';
 import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
-import { ProductService } from '../_services/product.service';
 import { CategoriesService } from '../../categories/_services/categories.service';
+import { ProductService } from '../_services/product.service';
 
 @Component({
   selector: 'app-add-new-product',
@@ -11,19 +11,19 @@ import { CategoriesService } from '../../categories/_services/categories.service
 })
 export class AddNewProductComponent implements OnInit {
 
-  title:any=null;
-  sku:any=null;
-  categories:any=[];
-  categorie:any="";
-  price_pesos:any=0;
-  price_usd:any=0;
-  imagen_file:any=null;
-  imagen_previzualizacion:any=null;
-  resumen:any=null;
-  description:any=null;
-  //
-  tag:any=null;
-  tags:any=[];
+  title:any = null;
+  sku:any = null;
+  categories:any = [];
+  categorie:any = "";
+  price_pesos:any = 0;  
+  price_usd:any = 0;  
+  imagen_file:any= null;
+  imagen_previzualizacion:any = null;
+  resumen:any = null;
+  description:any = null;
+  // 
+  tag:any = null;
+  tags:any = [];
 
   isLoading$:any;
   constructor(
@@ -38,7 +38,7 @@ export class AddNewProductComponent implements OnInit {
       console.log(resp);
       this.categories = resp.categories;
       this.loadServices();
-    });
+    })
   }
 
   loadServices(){
@@ -51,7 +51,7 @@ export class AddNewProductComponent implements OnInit {
   processFile($event){
     if($event.target.files[0].type.indexOf("image") < 0){
       this.imagen_previzualizacion = null;
-      this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! Necesitas ingresar un archivo de tipo imagen.'`});
+      this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! Necesita ingresar un archivo de tipo imagen.'`});
       return;
     }
     this.imagen_file = $event.target.files[0];
@@ -70,9 +70,9 @@ export class AddNewProductComponent implements OnInit {
   }
 
   save(){
-    if(!this.title || !this.categorie || !this.price_pesos || !this.price_usd || !this.resumen || 
-       !this.description || !this.sku || this.tags.length==0 || !this.imagen_file){
-        this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! Necesitas ingresar todos los campos.'`});
+    if(!this.title || !this.categorie || !this.price_pesos || !this.price_usd || !this.resumen || !this.description
+      || !this.sku || this.tags.length == 0 || !this.imagen_file){
+        this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! NECESITAS DIGITAR TODOS LOS CAMPOS DEL FORMULARIO.'`});
         return;
     }
     let formData = new FormData();
@@ -89,11 +89,11 @@ export class AddNewProductComponent implements OnInit {
     this._productService.createProduct(formData).subscribe((resp:any) => {
       console.log(resp);
       if(resp.code == 403){
-        this.toaster.open(NoticyAlertComponent,{text:`danger-'Upps! El producto ya existe.'`});
+        this.toaster.open(NoticyAlertComponent,{text:`danger-'UPPS ! EL PRODUCTO YA EXISTE, DIGITAR OTRO NOMBRE'`});
         return;
       }else{
-        this.toaster.open(NoticyAlertComponent,{text:`success-'El producto se registró con éxito.'`});
-        this.title = null;
+        this.toaster.open(NoticyAlertComponent,{text:`primary-'EL PRODUCTO SE REGISTRO CON EXITO'`});
+        this.title = null; 
         this.categorie = null;
         this.sku = null;
         this.price_pesos = null;
@@ -106,5 +106,6 @@ export class AddNewProductComponent implements OnInit {
         return;
       }
     })
+
   }
 }

@@ -1,10 +1,11 @@
 import routerx from 'express-promise-router'
 import categoriecontroller from '../controllers/CategorieController'
 import auth from '../middlewares/auth'
-import multiparty from 'connect-multiparty'
 
+import multiparty from 'connect-multiparty'
 var path = multiparty({uploadDir: './uploads/categorie'})
-const router = new routerx();
+const router = routerx();
+// http://localhost:3000/api/users/register
 
 router.post("/register",[auth.verifyAdmin,path],categoriecontroller.register);
 router.put("/update",[auth.verifyAdmin,path],categoriecontroller.update);

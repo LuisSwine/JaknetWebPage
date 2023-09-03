@@ -1,20 +1,22 @@
 import jwt from 'jsonwebtoken'
 import models from '../models'
-export default{
+
+export default {
     encode: async(_id,rol,email) =>{
-        const token = jwt.sign({_id: _id,rol: rol,email: email},'llavePrivadaParaEcommece',{expiresIn:'1d'});
+        const token = jwt.sign({_id: _id,rol: rol,email: email},'llavePrivadaParaEcommece',{expiresIn: '1d'});
         return token;
     },
-    decode: async(token) =>{
-        try{
+    decode: async(token) => {
+        try {
             const {_id} = await jwt.verify(token,'llavePrivadaParaEcommece');
-            const user = models.User.findOne({_id: _id, state: 1});
+            const user = models.User.findOne({_id: _id,state: 1});
             if(user){
-                return user
+                return user;
             }
-            return false
-        }catch(error){
+            return false;
+        } catch (error) {
             console.log(error);
+            return false;
         }
     }
 }

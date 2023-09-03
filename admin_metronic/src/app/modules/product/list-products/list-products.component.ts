@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../_services/product.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Toaster } from 'ngx-toast-notifications';
+import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
 import { CategoriesService } from '../../categories/_services/categories.service';
 import { DeleteNewProductComponent } from '../delete-new-product/delete-new-product.component';
-import { NoticyAlertComponent } from 'src/app/componets/notifications/noticy-alert/noticy-alert.component';
-
+import { ProductService } from '../_services/product.service';
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
@@ -57,7 +56,6 @@ export class ListProductsComponent implements OnInit {
     this.categorie = null;
     this.search = null;
     this.allProducts();
-    
   }
   editProduct(product){
     this.router.navigateByUrl("/productos/editar-producto/"+product._id);
@@ -74,5 +72,4 @@ export class ListProductsComponent implements OnInit {
       }
     })
   }
-
 }

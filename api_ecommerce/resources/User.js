@@ -1,6 +1,6 @@
-export default{
+export default {
     user_list: (user) => {
-        return{
+        return {
             _id: user._id,
             name: user.name,
             surname: user.surname,

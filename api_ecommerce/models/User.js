@@ -1,4 +1,4 @@
-import mongoose,{Schema} from "mongoose";   
+import mongoose,{Schema} from "mongoose";
 
 const UserSchema = new Schema({
     rol:{type: String,maxlength:30,required:true},
@@ -7,11 +7,11 @@ const UserSchema = new Schema({
     email:{type: String,maxlength:250,required:true,unique:true},
     password:{type: String,maxlength:250,required:true},
     avatar:{type: String,maxlength:250,required:false},
-    state:{type: Number,default:1},//1=activo % 2=desactivo
+    state:{type: Number,default:1},//1 es activo y 2 es des activo
     phone:{type: String,maxlength:20,required:false},
-    birthday:{type: String,maxlength:250,required:false},
+    birthday:{type: String,maxlength:20,required:false},
 },{
-    timestamps : true //creado y actualizado en las fechas de hoy y
+    timestamps: true
 });
 
 const User = mongoose.model("user",UserSchema);
