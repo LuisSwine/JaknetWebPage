@@ -130,6 +130,27 @@
   line-height: 24px;
   margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+  #services .mobile-column .icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px; /* Agrega margen inferior para separar el ícono del texto en dispositivos móviles */
+  }
+
+  #services .mobile-column .title {
+    margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
+    text-align: center; /* Centra el texto en dispositivos móviles */
+  }
+
+  #services .mobile-column .description {
+    margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
+    text-align: center; /* Centra el texto en dispositivos móviles */
+  }
+
+}
+
 /* End Services Section*/
 
 /* Clients Section o solcios
